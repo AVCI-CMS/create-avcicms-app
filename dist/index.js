@@ -1,8 +1,0 @@
-#!/usr/bin/env node
-"use strict";var r=Object.create;var c=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var g=Object.getOwnPropertyNames;var u=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var j=(e,t,a,p)=>{if(t&&typeof t=="object"||typeof t=="function")for(let n of g(t))!b.call(e,n)&&n!==a&&c(e,n,{get:()=>t[n],enumerable:!(p=d(t,n))||p.enumerable});return e};var i=(e,t,a)=>(a=e!=null?r(u(e)):{},j(t||!e||!e.__esModule?c(a,"default",{value:e,enumerable:!0}):a,e));var m=require("commander"),s=i(require("prompts")),o=i(require("picocolors")),l=new m.Command;l.name("create-avcicms-app").description("Scaffold an AVCI CMS powered application").version("1.0.0");l.action(async()=>{console.log(o.default.cyan(o.default.bold(`
-\u{1F680} Welcome to AVCI CMS CLI!
-`)));let e=await(0,s.default)([{type:"text",name:"projectName",message:"What is your project named?",initial:"my-avcicms-app"},{type:"select",name:"template",message:"Select a template",choices:[{title:"Next.js Blog (App Router)",value:"nextjs-blog"},{title:"React SPA",value:"react-spa"},{title:"Blank Project",value:"blank"}]}]);e.projectName||(console.log(o.default.red("Operation cancelled.")),process.exit(1)),console.log(`
-${o.default.green("\u2714")} Setting up ${o.default.bold(e.projectName)} with the ${o.default.bold(e.template)} template...
-`),console.log(o.default.gray(`(Template downloading and setup will be implemented in the next phase.)
-`))});l.parse();
-//# sourceMappingURL=index.js.map
